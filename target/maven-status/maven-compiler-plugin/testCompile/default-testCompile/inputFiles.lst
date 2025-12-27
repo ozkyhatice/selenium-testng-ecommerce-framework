@@ -3,5 +3,6 @@
 /Users/hatice/Downloads/excoto/ecommerce-test-automation/src/test/java/com/automation/driver/DriverFactory.java
 /Users/hatice/Downloads/excoto/ecommerce-test-automation/src/test/java/com/automation/listeners/TestListener.java
 /Users/hatice/Downloads/excoto/ecommerce-test-automation/src/test/java/com/automation/pages/BasePage.java
+/Users/hatice/Downloads/excoto/ecommerce-test-automation/src/test/java/com/automation/pages/HomePage.java
 /Users/hatice/Downloads/excoto/ecommerce-test-automation/src/test/java/com/automation/tests/HomePageTest.java
 /Users/hatice/Downloads/excoto/ecommerce-test-automation/src/test/java/com/automation/utils/ConfigReader.java

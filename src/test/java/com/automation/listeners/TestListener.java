@@ -9,6 +9,7 @@ import org.testng.ITestResult;
 
 import java.io.File;
 import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 
 public class TestListener implements ITestListener {
 
@@ -28,7 +29,8 @@ public class TestListener implements ITestListener {
                         new File("target/screenshots/" + result.getName() + ".png");
 
                 destination.getParentFile().mkdirs();
-                Files.copy(screenshot.toPath(), destination.toPath());
+                Files.copy(screenshot.toPath(), destination.toPath(), 
+                        StandardCopyOption.REPLACE_EXISTING);
 
             } catch (Exception e) {
                 e.printStackTrace();

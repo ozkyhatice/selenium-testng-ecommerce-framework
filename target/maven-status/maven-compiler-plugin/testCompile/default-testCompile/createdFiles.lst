@@ -1,4 +1,5 @@
 com/automation/tests/HomePageTest.class
+com/automation/pages/HomePage.class
 com/automation/driver/DriverFactory.class
 com/automation/utils/ConfigReader.class
 com/automation/DummyTest.class
