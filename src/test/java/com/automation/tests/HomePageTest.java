@@ -8,8 +8,8 @@ public class HomePageTest extends BaseTest {
 
     @Test
     public void verifyHomePageTitle() {
-        String title = driver.getTitle();
-        Assert.assertTrue(title.contains("Automation"),
-                "Home page title does not contain expected text");
+        // String title = driver.getTitle();
+        Assert.assertTrue(false);
     }
+
 }

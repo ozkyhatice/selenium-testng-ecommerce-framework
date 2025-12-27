@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="0" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-24T16:32:52 GMT+03:00" name="Ecommerce Test Suite" finished-at="2025-12-24T16:32:58 GMT+03:00" duration-ms="6170">
+  <suite started-at="2025-12-27T13:51:43 GMT+03:00" name="Ecommerce Parallel Suite" finished-at="2025-12-27T13:51:57 GMT+03:00" duration-ms="13791">
     <groups>
     </groups>
-    <test started-at="2025-12-24T16:32:52 GMT+03:00" name="Chrome Tests" finished-at="2025-12-24T16:32:58 GMT+03:00" duration-ms="6170">
+    <test started-at="2025-12-27T13:51:43 GMT+03:00" name="Chrome Test - 1" finished-at="2025-12-27T13:51:57 GMT+03:00" duration-ms="13367">
       <class name="com.automation.tests.HomePageTest">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:com.automation.tests.HomePageTest@501edcf1]" started-at="2025-12-24T16:32:52 GMT+03:00" name="setUp" finished-at="2025-12-24T16:32:58 GMT+03:00" duration-ms="5916" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:com.automation.tests.HomePageTest@13c10b87]" started-at="2025-12-27T13:51:43 GMT+03:00" name="setUp" finished-at="2025-12-27T13:51:56 GMT+03:00" duration-ms="12194" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,163 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyHomePageTitle()[pri:0, instance:com.automation.tests.HomePageTest@501edcf1]" started-at="2025-12-24T16:32:58 GMT+03:00" name="verifyHomePageTitle" finished-at="2025-12-24T16:32:58 GMT+03:00" duration-ms="18" status="PASS">
+        <test-method signature="verifyHomePageTitle()[pri:0, instance:com.automation.tests.HomePageTest@13c10b87]" started-at="2025-12-27T13:51:56 GMT+03:00" name="verifyHomePageTitle" finished-at="2025-12-27T13:51:56 GMT+03:00" duration-ms="7" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at com.automation.tests.HomePageTest.verifyHomePageTitle(HomePageTest.java:12)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+at java.base/java.lang.Thread.run(Thread.java:1474)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyHomePageTitle -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automation.tests.HomePageTest@501edcf1]" started-at="2025-12-24T16:32:58 GMT+03:00" name="tearDown" finished-at="2025-12-24T16:32:58 GMT+03:00" duration-ms="222" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automation.tests.HomePageTest@13c10b87]" started-at="2025-12-27T13:51:57 GMT+03:00" name="tearDown" finished-at="2025-12-27T13:51:57 GMT+03:00" duration-ms="124" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.automation.tests.HomePageTest -->
-    </test> <!-- Chrome Tests -->
-  </suite> <!-- Ecommerce Test Suite -->
+    </test> <!-- Chrome Test - 1 -->
+    <test started-at="2025-12-27T13:51:43 GMT+03:00" name="Chrome Test - 2" finished-at="2025-12-27T13:51:57 GMT+03:00" duration-ms="13679">
+      <class name="com.automation.tests.HomePageTest">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:com.automation.tests.HomePageTest@778d1062]" started-at="2025-12-27T13:51:43 GMT+03:00" name="setUp" finished-at="2025-12-27T13:51:56 GMT+03:00" duration-ms="12684" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyHomePageTitle()[pri:0, instance:com.automation.tests.HomePageTest@778d1062]" started-at="2025-12-27T13:51:56 GMT+03:00" name="verifyHomePageTitle" finished-at="2025-12-27T13:51:56 GMT+03:00" duration-ms="2" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at com.automation.tests.HomePageTest.verifyHomePageTitle(HomePageTest.java:12)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+at java.base/java.lang.Thread.run(Thread.java:1474)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyHomePageTitle -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automation.tests.HomePageTest@778d1062]" started-at="2025-12-27T13:51:57 GMT+03:00" name="tearDown" finished-at="2025-12-27T13:51:57 GMT+03:00" duration-ms="134" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.automation.tests.HomePageTest -->
+    </test> <!-- Chrome Test - 2 -->
+    <test started-at="2025-12-27T13:51:43 GMT+03:00" name="Chrome Test - 3" finished-at="2025-12-27T13:51:57 GMT+03:00" duration-ms="13791">
+      <class name="com.automation.tests.HomePageTest">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:com.automation.tests.HomePageTest@1f0f1111]" started-at="2025-12-27T13:51:43 GMT+03:00" name="setUp" finished-at="2025-12-27T13:51:56 GMT+03:00" duration-ms="12862" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyHomePageTitle()[pri:0, instance:com.automation.tests.HomePageTest@1f0f1111]" started-at="2025-12-27T13:51:56 GMT+03:00" name="verifyHomePageTitle" finished-at="2025-12-27T13:51:56 GMT+03:00" duration-ms="1" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at com.automation.tests.HomePageTest.verifyHomePageTitle(HomePageTest.java:12)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+at java.base/java.lang.Thread.run(Thread.java:1474)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyHomePageTitle -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automation.tests.HomePageTest@1f0f1111]" started-at="2025-12-27T13:51:57 GMT+03:00" name="tearDown" finished-at="2025-12-27T13:51:57 GMT+03:00" duration-ms="139" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.automation.tests.HomePageTest -->
+    </test> <!-- Chrome Test - 3 -->
+  </suite> <!-- Ecommerce Parallel Suite -->
 </testng-results>

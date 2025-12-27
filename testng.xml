@@ -1,11 +1,30 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Ecommerce Test Suite">
+<suite name="Ecommerce Parallel Suite"
+       parallel="tests"
+       thread-count="3">
 
-    <test name="Chrome Tests">
+    <test name="Chrome Test - 1">
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.automation.tests.HomePageTest"/>
         </classes>
     </test>
+
+    <test name="Chrome Test - 2">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.automation.tests.HomePageTest"/>
+        </classes>
+    </test>
+
+    <test name="Chrome Test - 3">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.automation.tests.HomePageTest"/>
+        </classes>
+    </test>
+    <listeners>
+        <listener class-name="com.automation.listeners.TestListener"/>
+    </listeners>
 
 </suite>
