@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 14.00 s <<< FAILURE! -- in TestSuite
-com.automation.tests.HomePageTest.verifyHomePageTitle -- Time elapsed: 0.369 s <<< FAILURE!
+Tests run: 3, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 14.42 s <<< FAILURE! -- in TestSuite
+com.automation.tests.HomePageTest.verifyHomePageTitle -- Time elapsed: 0.514 s <<< FAILURE!
 java.lang.AssertionError: expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1578)
@@ -30,7 +30,7 @@ java.lang.AssertionError: expected [true] but found [false]
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
 	at java.base/java.lang.Thread.run(Thread.java:1474)
 
-com.automation.tests.HomePageTest.verifyHomePageTitle -- Time elapsed: 0.670 s <<< FAILURE!
+com.automation.tests.HomePageTest.verifyHomePageTitle -- Time elapsed: 0.368 s <<< FAILURE!
 java.lang.AssertionError: expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1578)
@@ -58,7 +58,7 @@ java.lang.AssertionError: expected [true] but found [false]
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
 	at java.base/java.lang.Thread.run(Thread.java:1474)
 
-com.automation.tests.HomePageTest.verifyHomePageTitle -- Time elapsed: 0.777 s <<< FAILURE!
+com.automation.tests.HomePageTest.verifyHomePageTitle -- Time elapsed: 0.496 s <<< FAILURE!
 java.lang.AssertionError: expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1578)
