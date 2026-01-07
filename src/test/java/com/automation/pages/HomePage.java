@@ -2,12 +2,14 @@ package com.automation.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
 public class HomePage extends BasePage {
 
     private By searchBox = By.id("search_product");
     private By searchButton = By.id("submit_search");
-    private By productsLink = By.linkText("Products");
+    private By productsLink = By.partialLinkText("Products");
     private By signupLoginLink = By.linkText("Signup / Login");
     public HomePage(WebDriver driver) {
         super(driver);
@@ -18,7 +20,7 @@ public class HomePage extends BasePage {
 
     
     public void navigateToProducts() {
-        driver.findElement(productsLink).click();
+        click(productsLink);
     }
 
     public void searchFor(String text) {
