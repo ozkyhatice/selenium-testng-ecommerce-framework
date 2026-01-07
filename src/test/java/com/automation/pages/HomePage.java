@@ -8,11 +8,15 @@ public class HomePage extends BasePage {
     private By searchBox = By.id("search_product");
     private By searchButton = By.id("submit_search");
     private By productsLink = By.linkText("Products");
-
+    private By signupLoginLink = By.linkText("Signup / Login");
     public HomePage(WebDriver driver) {
         super(driver);
     }
+    public void navigateToSignupLogin() {
+        driver.findElement(signupLoginLink).click();
+    }
 
+    
     public void navigateToProducts() {
         driver.findElement(productsLink).click();
     }
