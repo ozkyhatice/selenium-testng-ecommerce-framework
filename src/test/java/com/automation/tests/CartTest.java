@@ -8,7 +8,7 @@ import org.testng.asserts.SoftAssert;
 
 public class CartTest extends BaseTest{
     @Test
-    public void verifyProductAddedToCart() {
+    public void verifyProductAddedAndDeletedToCart() {
         SoftAssert softAssert = new SoftAssert();
         HomePage homePage = new HomePage(driver);
         ProductsPage productsPage = new ProductsPage(driver);
@@ -26,6 +26,12 @@ public class CartTest extends BaseTest{
         String actualProductName = cartPage.getFirstProductName();
         softAssert.assertEquals(actualProductName.toLowerCase(), expectedProductName.toLowerCase(),
                 "Product in cart does not match the added product.");
+        //delete item from cart
+        cartPage.deleteItemFromCart();
+        //verify cart is empty
+        boolean isRemoved = cartPage.isProductRemoved();
+        softAssert.assertTrue(isRemoved, "Product was not removed from the cart.");
+        softAssert.assertAll();     
 
 
     }
