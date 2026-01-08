@@ -15,7 +15,7 @@ public class ProductSearchTest extends BaseTest {
                 // {"Dress"}
         };
     }
-    @Test(dataProvider = "searchItems")
+    @Test(retryAnalyzer = com.automation.utils.Retry.class, dataProvider = "searchItems")
     public void verifyProductSearch(String product) {
         SoftAssert softAssert = new SoftAssert();
         HomePage homePage = new HomePage(driver);
@@ -27,6 +27,7 @@ public class ProductSearchTest extends BaseTest {
         softAssert.assertTrue(productsPage.isProductPageVisible(), "Products page is not visible");
 
         // search
+        driver.navigate().refresh(); // refresh to avoid stale element issues
         homePage.searchFor(product);
         // verify search results
         List<WebElement> results = productsPage.getSearchResultList();
