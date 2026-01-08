@@ -7,6 +7,7 @@ public class CartPage extends BasePage{
     private By firstProductName = By.cssSelector(".cart_description h4 a");
     private By deleteButton = By.className("cart_quantity_delete");
     private By cartRows = By.cssSelector(".cart_info tbody tr");
+    private By checkoutButton = By.className("check_out");
     public CartPage(WebDriver driver) {
         super(driver);
     }
@@ -18,5 +19,8 @@ public class CartPage extends BasePage{
     }
     public boolean isProductRemoved() {
         return wait.until(ExpectedConditions.invisibilityOfElementLocated(cartRows));
+    }
+    public void clickCheckout() {
+        clickWithJS(checkoutButton);
     }
 }

@@ -24,6 +24,7 @@ public class BasePage {
     }
     protected void clickWithJS(By locator) {
         WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-        ((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);    
     }
+    
 }
