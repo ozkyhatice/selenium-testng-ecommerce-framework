@@ -11,21 +11,31 @@ public class ProductsPage extends BasePage {
     //LOCATORS
     private By allProductsText = By.xpath("//h2[text()='All Products']");
     private By searchResultNames = By.cssSelector(".productinfo p");
-
+    private By addToCartButton = By.cssSelector(".productinfo .add-to-cart");
+    private By viewCartButton = By.xpath("//u[text()='View Cart']");
     public ProductsPage(WebDriver driver) {
         super(driver);
     }
     public boolean isProductPageVisible() {
-    try {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(allProductsText)).isDisplayed();
-    } catch (Exception e) {
-        return false;
-    }
+        try {
+            return wait.until(ExpectedConditions.visibilityOfElementLocated(allProductsText)).isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
 }
     public List<WebElement> getSearchResultList() {
-    wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(searchResultNames));
-    return driver.findElements(searchResultNames);
-}
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(searchResultNames));
+        return driver.findElements(searchResultNames);
+    }
+    public void addFirstProductToCart() {
+        clickWithJS(addToCartButton);
+    }
+    public void navigateToViewCart() {
+        click(viewCartButton);
+    }
+    public String getFirstProductName() {
+        return wait.until(driver-> driver.findElement(searchResultNames)).getText();
+    }
 }
     
 
