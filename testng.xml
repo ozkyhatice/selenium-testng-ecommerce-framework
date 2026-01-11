@@ -1,22 +1,32 @@
-!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Ecommerce Full Regression Suite" parallel="tests" thread-count="3">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Ecommerce Parallel Suite"
+       parallel="tests"
+       thread-count="3">
 
-    <test name="UI Login and Search Tests">
+    <test name="Chrome Test - 1">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <!-- <class name="com.automation.tests.HomePageTest"/> -->
-            <!-- <class name="com.automation.tests.LoginTest"/> -->
-            <!-- <class name="com.automation.tests.ProductSearchTest"/> -->
+            <class name="com.automation.tests.HomePageTest"/>
         </classes>
     </test>
 
-    <test name="API Regression Tests">
+    <test name="Chrome Test - 2">
+        <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="com.automation.api.ApiSearchTest"/>
+            <class name="com.automation.tests.HomePageTest"/>
         </classes>
     </test>
 
+    <test name="Chrome Test - 3">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.automation.tests.HomePageTest"/>
+            <class name="com.automation.tests.ApiSearchTest"/>
+            
+        </classes>
+    </test>
     <listeners>
         <listener class-name="com.automation.listeners.TestListener"/>
     </listeners>
+
 </suite>
