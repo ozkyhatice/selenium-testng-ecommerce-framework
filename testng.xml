@@ -3,7 +3,7 @@
        parallel="tests"
        thread-count="3">
 
-    <test name="Chrome Test - 1">
+    <!-- <test name="Chrome Test - 1">
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.automation.tests.HomePageTest"/>
@@ -15,7 +15,7 @@
         <classes>
             <class name="com.automation.tests.HomePageTest"/>
         </classes>
-    </test>
+    </test> -->
 
     <test name="Chrome Test - 3">
         <parameter name="browser" value="chrome"/>
