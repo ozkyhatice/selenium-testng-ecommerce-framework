@@ -21,7 +21,7 @@
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.automation.tests.HomePageTest"/>
-            <class name="com.automation.tests.ApiSearchTest"/>
+            <class name="com.automation.api.ApiSearchTest"/>
             
         </classes>
     </test>
