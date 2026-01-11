@@ -22,6 +22,7 @@
         <classes>
             <class name="com.automation.tests.HomePageTest"/>
             <class name="com.automation.api.ApiSearchTest"/>
+            <class name="com.automation.api.ProductApiTest"/>
             
         </classes>
     </test>
