@@ -55,7 +55,7 @@ public class LoginTest extends BaseTest {
         softAssert.assertEquals(actualMessage, expectedError, "Error message does not match");
         softAssert.assertAll();
     }
-    @Test(dataProvider = "html5ValidatiobData")
+    @Test(dataProvider = "html5ValidatiobData", retryAnalyzer = com.automation.utils.Retry.class)
     public void verifyHTML5ValidationMessageTest(String email, String password) {
         SoftAssert softAssert = new SoftAssert();
         HomePage homePage = new HomePage(driver);
