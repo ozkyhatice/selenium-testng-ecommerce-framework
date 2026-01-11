@@ -5,16 +5,16 @@
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.automation.tests.HomePageTest"/>
-            <class name="com.automation.tests.LoginTest"/>
+            <!-- <class name="com.automation.tests.LoginTest"/> -->
             <!-- <class name="com.automation.tests.ProductSearchTest"/> -->
         </classes>
     </test>
 
-    <!-- <test name="API Regression Tests">
+    <test name="API Regression Tests">
         <classes>
             <class name="com.automation.api.ApiSearchTest"/>
         </classes>
-    </test> -->
+    </test>
 
     <listeners>
         <listener class-name="com.automation.listeners.TestListener"/>
