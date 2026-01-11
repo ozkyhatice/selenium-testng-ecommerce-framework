@@ -3,7 +3,6 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import org.testng.asserts.SoftAssert;
 
 import io.restassured.path.json.JsonPath;
 
@@ -33,4 +32,26 @@ public class ProductApiTest {
         softAssert.assertNotNull(firstProductCategory, "First product category is null");
         softAssert.assertAll();
     }
+    @Test
+    public void verifySearchWithoutParameter() {
+        SoftAssert softAssert = new SoftAssert();
+        RestAssured.baseURI = "https://automationexercise.com/api";
+        Response response = given()
+                .contentType("application/x-www-form-urlencoded")
+                // .formParam("search_product",  "t-shirt")
+                .when()
+                .post("/searchProduct")
+                .then()
+                .extract().response();
+        //assertion
+        JsonPath jsonPath = response.jsonPath();
+        // api code must return 400
+        int apiResponseCode = jsonPath.getInt("responseCode");
+        String apiMessage = jsonPath.getString("message");
+        softAssert.assertEquals(apiResponseCode, 400, "API response code is not 400");
+        softAssert.assertTrue(apiMessage.contains("missing"), "API message does not indicate missing parameter");
+        System.out.println("API Response Message: " + apiMessage);
+        softAssert.assertAll();
+    }
+    
 }
