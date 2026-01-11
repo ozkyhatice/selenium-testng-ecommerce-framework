@@ -24,6 +24,7 @@
             <class name="com.automation.api.ApiSearchTest"/>
             <class name="com.automation.api.ProductApiTest"/>
             <class name="com.automation.tests.LoginTest"/>
+            <class name="com.automation.tests.CartTest"/>
             
         </classes>
     </test>
