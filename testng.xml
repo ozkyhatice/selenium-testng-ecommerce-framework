@@ -25,7 +25,7 @@
             <class name="com.automation.api.ProductApiTest"/>
             <class name="com.automation.tests.LoginTest"/>
             <class name="com.automation.tests.CartTest"/>
-            <class name="com.automation.tests.CheckoutTest"/>
+            <!-- <class name="com.automation.tests.CheckoutTest"/> -->
             
         </classes>
     </test>

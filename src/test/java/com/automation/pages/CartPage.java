@@ -21,6 +21,16 @@ public class CartPage extends BasePage{
         return wait.until(ExpectedConditions.invisibilityOfElementLocated(cartRows));
     }
     public void clickCheckout() {
+        try {
+            ((org.openqa.selenium.JavascriptExecutor) driver).executeScript(
+                "var ads = document.getElementById('dismiss-button'); " +
+                "if(ads) ads.click();"
+            );
+        } catch (Exception e) {
+        }
+        
+        wait.until(ExpectedConditions.presenceOfElementLocated(checkoutButton));
+        wait.until(ExpectedConditions.elementToBeClickable(checkoutButton));
         clickWithJS(checkoutButton);
     }
 }

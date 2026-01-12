@@ -24,6 +24,10 @@ public class BasePage {
     }
     protected void clickWithJS(By locator) {
         WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+        // Scroll element into view
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", element);
+        // Wait for element to be stable after scroll
+        wait.until(ExpectedConditions.elementToBeClickable(locator));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);    
     }
     
