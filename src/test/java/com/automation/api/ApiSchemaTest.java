@@ -1,17 +1,22 @@
 package com.automation.api;
 import org.testng.annotations.Test;
 import io.restassured.response.Response;
-import static io.restassured.RestAssured.get;
+
 import java.util.List;
 import java.util.Map;
 import org.testng.asserts.SoftAssert;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
+import static io.restassured.RestAssured.given;
 
 
 public class ApiSchemaTest extends ApiBaseTest{
     @Test
-    public void verifyProductsSchema() {
+    public void verifyProductsSchema0() {
 
-        Response response = get("productsList");
+        Response response = given()
+            .spec(requestSpec)
+        .when()
+            .get("/productsList");
         List<Map<String, Object>> products = response.jsonPath().getList("products");
         SoftAssert softAssert = new SoftAssert();
         int statusCode = response.jsonPath().getInt("responseCode");
@@ -24,5 +29,16 @@ public class ApiSchemaTest extends ApiBaseTest{
             softAssert.assertTrue(product.get("category") instanceof Map, "Product category is not a Map");
         }
         softAssert.assertAll();
+    }
+    // JSON Schema validation test
+    @Test
+    public void verifyProductsSchema() {
+        given()
+            .spec(requestSpec)
+        .when()
+            .get("/productsList")
+        .then()
+            .statusCode(200)
+            .body(matchesJsonSchemaInClasspath("productsSchema.json"));
     }
 }
