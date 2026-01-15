@@ -20,9 +20,6 @@
     <test name="Chrome Test - 3">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="com.automation.tests.HomePageTest"/>
-            <class name="com.automation.tests.LoginTest"/>
-            <class name="com.automation.tests.CartTest"/>
             <class name="com.automation.api.ProductApiTest"/>
             <class name="com.automation.api.ApiSearchTest"/>
             <class name="com.automation.api.SearchApiDataDrivenTest"/>
@@ -33,7 +30,7 @@
         </classes>
     </test>
     <test name = "ui test" >
-        <parameter name="browser" value="firefox"/>
+        <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.automation.tests.HomePageTest"/>
             <class name="com.automation.tests.LoginTest"/>
