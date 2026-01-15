@@ -1,0 +1,14 @@
+[
+  {
+    "searchTerm": "Tshirt",
+    "expectedCategory": "Tshirts"
+  },
+  {
+    "searchTerm": "Dress",
+    "expectedCategory": "Dress"
+  },
+  {
+    "searchTerm": "Jeans",
+    "expectedCategory": "Jeans"
+  }
+]
