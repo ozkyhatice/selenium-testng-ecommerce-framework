@@ -32,7 +32,6 @@
             
         </classes>
     </test>
-    <test name = "ui test" >
     
     <listeners>
         <listener class-name="com.automation.listeners.TestListener"/>
