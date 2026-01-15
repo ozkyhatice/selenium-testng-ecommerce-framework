@@ -50,7 +50,7 @@ public class ProductApiTest {
         String apiMessage = jsonPath.getString("message");
         softAssert.assertEquals(apiResponseCode, 400, "API response code is not 400");
         softAssert.assertTrue(apiMessage.contains("missing"), "API message does not indicate missing parameter");
-        System.out.println("API Response Message: " + apiMessage);
+        // System.out.println("API Response Message: " + apiMessage);
         softAssert.assertAll();
     }
     

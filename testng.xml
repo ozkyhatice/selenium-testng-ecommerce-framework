@@ -21,12 +21,23 @@
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.automation.tests.HomePageTest"/>
-            <class name="com.automation.api.ApiSearchTest"/>
-            <class name="com.automation.api.ProductApiTest"/>
             <class name="com.automation.tests.LoginTest"/>
             <class name="com.automation.tests.CartTest"/>
+            <class name="com.automation.api.ProductApiTest"/>
+            <class name="com.automation.api.ApiSearchTest"/>
+            <class name="com.automation.api.SearchApiDataDrivenTest"/>
+            <class name="com.automation.api.UserCrudTest"/>
+
             <!-- <class name="com.automation.tests.CheckoutTest"/> -->
             
+        </classes>
+    </test>
+    <test name = "ui test" >
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="com.automation.tests.HomePageTest"/>
+            <class name="com.automation.tests.LoginTest"/>
+            <class name="com.automation.tests.CartTest"/>
         </classes>
     </test>
     <listeners>
