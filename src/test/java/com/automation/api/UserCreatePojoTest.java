@@ -33,6 +33,7 @@ public class UserCreatePojoTest extends ApiBaseTest {
                 .state("TestState")
                 .city("TestCity")
                 .mobile_number("1234567890")
+                .name("Test User")
                 .build();
         logger.info("user created: " + userRequest);
         Response response = given()

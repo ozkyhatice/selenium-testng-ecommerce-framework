@@ -24,4 +24,5 @@ public class UserRequest {
     private String state;
     private String city;
     private String mobile_number;
+    private String name;
 }
