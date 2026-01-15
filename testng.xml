@@ -27,6 +27,8 @@
             <class name="com.automation.api.ApiSearchTest"/>
             <class name="com.automation.api.SearchApiDataDrivenTest"/>
             <class name="com.automation.api.UserCrudTest"/>
+            <class name="com.automation.api.ProductApiPojoTest"/>
+            <class name="com.automation.api.UserCreatePojoTest"/>
 
             <!-- <class name="com.automation.tests.CheckoutTest"/> -->
             
