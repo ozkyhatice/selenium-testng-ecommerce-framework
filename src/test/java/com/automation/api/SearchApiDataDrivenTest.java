@@ -51,6 +51,6 @@ public class SearchApiDataDrivenTest extends ApiBaseTest {
                 .post("/searchProduct");
         logger.info("Response: " + response.asString());
         Assert.assertEquals(response.getStatusCode(), 200, "Status code is not 200");
-        logger.info("Search test completed for product: " + searhTerm);
+        
     }
 }
