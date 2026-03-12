@@ -11,15 +11,32 @@ public class LoginPage extends BasePage {
     private By loginButton = By.cssSelector("button[data-qa='login-button']");
     private By loginHeader = By.xpath("//h2[text()='Login to your account']");
     private By errorMessage = By.cssSelector("form[action='/login'] p");
+    private By loggedInUser = By.xpath("//a[contains(text(),'Logged in as')]");
     public LoginPage(WebDriver driver) {
         super(driver);
     }
 
     //ACTIONS
     public void login(String email, String password) {
-        driver.findElement(emailField).sendKeys(email);
-        driver.findElement(passwordField).sendKeys(password);
-        driver.findElement(loginButton).click();
+        WebElement emailElement = wait.until(ExpectedConditions.visibilityOfElementLocated(emailField));
+        emailElement.clear();
+        emailElement.sendKeys(email);
+        
+        WebElement passwordElement = wait.until(ExpectedConditions.visibilityOfElementLocated(passwordField));
+        passwordElement.clear();
+        passwordElement.sendKeys(password);
+        
+        WebElement button = wait.until(ExpectedConditions.elementToBeClickable(loginButton));
+        button.click();
+    }
+    
+    public boolean isLoggedIn() {
+        try {
+            wait.until(ExpectedConditions.visibilityOfElementLocated(loggedInUser));
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
     public boolean isLoginHeaderVisible() {
         return driver.findElement(loginHeader).isDisplayed();
@@ -30,5 +47,6 @@ public class LoginPage extends BasePage {
     public String getEmailValidationMessage() {
     WebElement emailElement = wait.until(ExpectedConditions.visibilityOfElementLocated(emailField));
     return emailElement.getAttribute("validationMessage");
-}
+    }
+
 }
