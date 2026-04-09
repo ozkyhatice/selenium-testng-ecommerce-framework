@@ -51,22 +51,24 @@
         {
           "listen": "prerequest",
           "script": {
-            "id": "334a1355-6624-4c37-8c4c-2d33e1dd6ba7",
+            "id": "b8274031-747e-4871-abb7-fe246244ac56",
             "exec": [
-              "var randomNum = Math.floor(Math.random() * 100000);",
-              "var randomEmail = \"postman1_user_\" + randomNum + \"@test.com\";",
-              "pm.environment.set(\"currentEmail\", randomEmail);",
-              "pm.environment.set(\"currenPassword\", \"123456\");",
-              "console.log(\"mail:\" + randomEmail);"
+              "const timestamp = Date.now();",
+              "const randomEmail = \"qa_\" + timestamp + \"@test.com\";",
+              "",
+              "pm.variables.set(\"dynamicEmail\", randomEmail);",
+              "",
+              "console.log(\"New test email: \" + randomEmail);"
             ],
             "type": "text/javascript",
-            "packages": {}
+            "packages": {},
+            "requests": {}
           }
         },
         {
           "listen": "test",
           "script": {
-            "id": "833d7aa6-59cd-4219-9f0a-2f03dc42c6bc",
+            "id": "9af4b0f6-82e5-41ab-a186-518ca0633f20",
             "exec": [
               "pm.test(\"Status code is success\", function () {",
               "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
@@ -78,7 +80,8 @@
               "});"
             ],
             "type": "text/javascript",
-            "packages": {}
+            "packages": {},
+            "requests": {}
           }
         }
       ],
