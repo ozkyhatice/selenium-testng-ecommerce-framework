@@ -32,7 +32,6 @@ jobs:
       - name: Install Newman
         run: npm install -g newman
 
-      # 3. Postman koleksiyonunu koşturur ve rapor üretir
       - name: Run Postman API Tests
         run: |
           newman run "postman/collections/AutomationExercise_API.postman_collection.json" \
