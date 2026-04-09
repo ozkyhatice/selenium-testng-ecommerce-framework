@@ -29,3 +29,12 @@ jobs:
 
       - name: Run Selenium Tests (Headless)
         run: mvn clean test -Dheadless=true
+      - name: Install Newman
+        run: npm install -g newman
+
+      # 3. Postman koleksiyonunu koşturur ve rapor üretir
+      - name: Run Postman API Tests
+        run: |
+          newman run "postman/collections/AutomationExercise_API.postman_collection.json" \
+          -e "postman/environments/AutomationExercise.postman_environment.json" \
+          --reporters cli

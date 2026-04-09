@@ -1,0 +1,172 @@
+{
+  "info": {
+    "_postman_id": "a0ee9901-ffd6-4729-ad19-df44eb1991fd",
+    "name": "AutomationExercise_API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Products",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "d4215db0-04ff-4281-9af0-9c114843b478",
+            "exec": [
+              "pm.test(\"Status code is 200\", function() {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "var jsonData = pm.response.json();",
+              "pm.test(\"api response code is 200\", function() {",
+              "    pm.expect(jsonData.responseCode).to.eql(200);",
+              "});",
+              "pm.test(\"product list is empty\", function() {",
+              "    pm.expect(jsonData.products.length).to.be.above(0);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "id": "04109ca4-ec56-4cfc-bd41-78ee5b335116",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/productsList",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "productsList"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Account",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "334a1355-6624-4c37-8c4c-2d33e1dd6ba7",
+            "exec": [
+              "var randomNum = Math.floor(Math.random() * 100000);",
+              "var randomEmail = \"postman1_user_\" + randomNum + \"@test.com\";",
+              "pm.environment.set(\"currentEmail\", randomEmail);",
+              "pm.environment.set(\"currenPassword\", \"123456\");",
+              "console.log(\"mail:\" + randomEmail);"
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "833d7aa6-59cd-4219-9f0a-2f03dc42c6bc",
+            "exec": [
+              "pm.test(\"Status code is success\", function () {",
+              "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+              "});",
+              "",
+              "var jsonData = pm.response.json();",
+              "pm.test(\"User created message check\", function () {",
+              "    pm.expect(jsonData.message).to.eql(\"User created!\");",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "id": "7b020503-e179-4948-b771-d2c369973c72",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "name",
+              "value": "Test User",
+              "type": "text"
+            },
+            {
+              "key": "email",
+              "value": "{{currenEmail}}",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "{{currenPassword}}",
+              "type": "text"
+            },
+            {
+              "key": "title",
+              "value": "Mr",
+              "type": "text"
+            },
+            {
+              "key": "firstname",
+              "value": "Ali",
+              "type": "text"
+            },
+            {
+              "key": "lastname",
+              "value": "Veli",
+              "type": "text"
+            },
+            {
+              "key": "company",
+              "value": "Test",
+              "type": "text"
+            },
+            {
+              "key": "address1",
+              "value": "Istanbul",
+              "type": "text"
+            },
+            {
+              "key": "country",
+              "value": "I",
+              "type": "text"
+            },
+            {
+              "key": "state",
+              "value": "Istanbul",
+              "type": "text"
+            },
+            {
+              "key": "city",
+              "value": "Istanbul",
+              "type": "text"
+            },
+            {
+              "key": "zipcode",
+              "value": "34000",
+              "type": "text"
+            },
+            {
+              "key": "mobile_number",
+              "value": "5555555555",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseUrl}}/createAccount",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "createAccount"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
