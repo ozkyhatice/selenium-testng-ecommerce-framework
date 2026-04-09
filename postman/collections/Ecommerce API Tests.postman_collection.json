@@ -49,43 +49,58 @@
       "name": "Create Account",
       "event": [
         {
-          "listen": "prerequest",
-          "script": {
-            "id": "334a1355-6624-4c37-8c4c-2d33e1dd6ba7",
-            "exec": [
-              "var randomNum = Math.floor(Math.random() * 100000);",
-              "var randomEmail = \"postman1_user_\" + randomNum + \"@test.com\";",
-              "pm.environment.set(\"currentEmail\", randomEmail);",
-              "pm.environment.set(\"currenPassword\", \"123456\");",
-              "console.log(\"mail:\" + randomEmail);"
-            ],
-            "type": "text/javascript",
-            "packages": {}
-          }
-        },
-        {
           "listen": "test",
           "script": {
-            "id": "833d7aa6-59cd-4219-9f0a-2f03dc42c6bc",
+            "id": "63b58d42-907b-4830-b940-8ff1360a5955",
             "exec": [
               "pm.test(\"Status code is success\", function () {",
               "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
               "});",
               "",
               "var jsonData = pm.response.json();",
+              "",
               "pm.test(\"User created message check\", function () {",
-              "    pm.expect(jsonData.message).to.eql(\"User created!\");",
+              "    if(jsonData.responseCode === 201) {",
+              "        pm.expect(jsonData.message).to.eql(\"User created!\");",
+              "    } else {",
+              "        pm.expect(jsonData.message).to.eql(\"User created!\", \"Account creation failed: \" + jsonData.message);",
+              "    }",
               "});"
             ],
             "type": "text/javascript",
-            "packages": {}
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "890063b5-9735-4f75-a4ac-a854f4ead9b4",
+            "exec": [
+              "const timestamp = Date.now();",
+              "const randomEmail = \"qa_\" + timestamp + \"@test.com\";",
+              "",
+              "pm.variables.set(\"dynamicEmail\", randomEmail);",
+              "",
+              "console.log(\"New test email: \" + randomEmail);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
           }
         }
       ],
       "id": "7b020503-e179-4948-b771-d2c369973c72",
       "request": {
         "method": "POST",
-        "header": [],
+        "header": [
+          {
+            "key": "email",
+            "value": "{{dynamicEmail}}",
+            "type": "text",
+            "uuid": "9a2a53a5-64ec-4c11-981b-cb92b633c942"
+          }
+        ],
         "body": {
           "mode": "urlencoded",
           "urlencoded": [
@@ -96,7 +111,7 @@
             },
             {
               "key": "email",
-              "value": "{{currenEmail}}",
+              "value": "{{dynamicEmail}}",
               "type": "text"
             },
             {
